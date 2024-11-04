@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<londonAuditChangesIssueDataElement xmlns="urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.9">
+    <londonNameElement>
+        <trigram>AuditChangesIssueTrigram</trigram>
+        <type_of_data>1</type_of_data>
+        <date_of_extraction>date_of_extraction1</date_of_extraction>
+        <branch>branch1</branch>
+        <londonAuditChangesIssueData>
+            <issue_ref>issueRef1</issue_ref>
+            <description>description1</description>
+            <date_object_type>dateObjectType1</date_object_type>
+            <time_object_type>timeObjectType1</time_object_type>
+            <user_object_type>userObjectType1</user_object_type>
+            <last_val>lastVal1</last_val>
+        </londonAuditChangesIssueData>
+    </londonNameElement>
+</londonAuditChangesIssueDataElement>
