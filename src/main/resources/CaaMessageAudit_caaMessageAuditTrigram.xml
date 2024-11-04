@@ -1,4 +1,4 @@
-git<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <londonCaaMessageAuditElement xmlns="urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.13">
     <londonNameElement>
         <trigram>caaMessageAuditTrigram</trigram>
