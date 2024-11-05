@@ -13,7 +13,7 @@
         <xs:sequence>
             <xs:element name="trigram" type="xs:string"/>
             <xs:element name="type_of_data" type="xs:string" />
-            <xs:element name="date_of_extraction" type="xs:string" />
+            <xs:element name="date_of_extraction" type="xs:date" />
             <xs:element name="branch" type="xs:string" />
             <xs:element name="londonCaaMessageAudit" type="CaaMessageAudit" minOccurs="0" />
         </xs:sequence>

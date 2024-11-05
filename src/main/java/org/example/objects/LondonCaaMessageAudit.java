@@ -8,13 +8,16 @@ import org.example.generated.LondonCaaMessageAuditElement;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.StringWriter;
 import java.util.List;
 
 public class LondonCaaMessageAudit implements XMLGenerator {
 
     @Override
-    public String generateXML(List<String> data) throws JAXBException {
+    public String generateXML(List<String> data) throws JAXBException, DatatypeConfigurationException {
 // Cria o elemento raiz LondonCaaMessageAuditElement
         LondonCaaMessageAuditElement rootElement = new LondonCaaMessageAuditElement();
 
@@ -22,7 +25,8 @@ public class LondonCaaMessageAudit implements XMLGenerator {
         CaaMessageAuditObject messageAuditObject = new CaaMessageAuditObject();
         messageAuditObject.setTrigram(data.get(0)); // Supõe-se que trigram está na posição 0
         messageAuditObject.setTypeOfData(data.get(1)); // Suponha que type_of_data está na posição 1
-        messageAuditObject.setDateOfExtraction(data.get(2)); // Suponha que date_of_extraction está na posição 2
+        XMLGregorianCalendar xml = DatatypeFactory.newInstance().newXMLGregorianCalendar(data.get(2));
+        messageAuditObject.setDateOfExtraction(xml); // Suponha que date_of_extraction está na posição 2
         messageAuditObject.setBranch(data.get(3)); // Suponha que branch está na posição 3
 
         // Cria o objeto CaaMessageAudit e define seus campos, caso existam no CSV
