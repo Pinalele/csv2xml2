@@ -1,9 +1,9 @@
-package org.example.objects;
+package org.example.london.generated.objects;
 
 import org.example.XMLGenerator;
-import org.example.generated.CaaMessageAudit;
-import org.example.generated.CaaMessageAuditObject;
-import org.example.generated.LondonCaaMessageAuditElement;
+import org.example.london.generated.CaaMessageAudit;
+import org.example.london.generated.CaaMessageAuditObject;
+import org.example.london.generated.LondonCaaMessageAuditElement;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.13", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package org.example.generated;
+package org.example.london.generated;

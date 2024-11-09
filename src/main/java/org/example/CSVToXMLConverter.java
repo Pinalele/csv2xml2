@@ -14,7 +14,7 @@ public class CSVToXMLConverter {
         String csvPath = "D:\\projects\\git\\csv2xml2\\src\\main\\resources\\TemplateCsv.csv";
         String outputDir = "D:\\projects\\git\\csv2xml2\\src\\main\\resources";
 
-        // Cria uma instância do conversor e inicia a conversão
+
         CSVToXMLConverter converter = new CSVToXMLConverter();
         try {
             converter.convertCSVToXML(csvPath, outputDir);
@@ -42,7 +42,7 @@ public class CSVToXMLConverter {
         Map<String, List<List<String>>> rowsByType = new HashMap<>();
 
         for (List<String> row : rows) {
-            int type = Integer.parseInt(row.get(1));  // Tipo está na posição 1
+            int type = Integer.parseInt(row.get(1));
 
             rowsByType.computeIfAbsent(String.valueOf(type), k -> new ArrayList<>()).add(row);
         }
@@ -54,7 +54,7 @@ public class CSVToXMLConverter {
 
             String xmlContent = generator.generateXML(groupedRows);
             String tableVal = getLetter(Integer.parseInt(type));
-            String outputFileName = outputDir + "/" + tableVal + ".xml"; // ID na posição 0
+            String outputFileName = outputDir + "/" + tableVal + ".xml";
 
             try (FileWriter writer = new FileWriter(outputFileName)) {
                 writer.write(xmlContent);

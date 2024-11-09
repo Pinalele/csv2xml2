@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.objects.AuditChangesIssueData;
-import org.example.objects.LondonCaaMessageAudit;
+import org.example.london.generated.objects.AuditChangesIssueData;
+import org.example.london.generated.objects.LondonCaaMessageAudit;
 
 public class XMLGeneratorFactory {
     public XMLGenerator getGenerator(int type) {
@@ -11,7 +11,7 @@ public class XMLGeneratorFactory {
             case 1:
                 return new AuditChangesIssueData();
             default:
-                throw new IllegalArgumentException("Tipo de XML não suportado: " + type);
+                throw new IllegalArgumentException("XML not supported: " + type);
         }
     }
 }

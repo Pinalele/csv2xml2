@@ -1,9 +1,9 @@
-package org.example.objects;
+package org.example.london.generated.objects;
 
 import org.example.XMLGenerator;
-import org.example.generated.AuditChangesAuditData;
-import org.example.generated.AuditChangesIssueDataObject;
-import org.example.generated.LondonAuditChangesIssueDataElement;
+import org.example.london.generated.AuditChangesAuditData;
+import org.example.london.generated.AuditChangesIssueDataObject;
+import org.example.london.generated.LondonAuditChangesIssueDataElement;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

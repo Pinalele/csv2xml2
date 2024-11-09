@@ -6,7 +6,7 @@
 //
 
 
-package org.example.generated;
+package org.example.london.generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="londonNameElement" type="{urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.9}auditChangesIssueDataObject" maxOccurs="unbounded"/>
+ *         &lt;element name="londonNameElement" type="{urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.13}CaaMessageAuditObject" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,11 +40,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "londonNameElement"
 })
-@XmlRootElement(name = "londonAuditChangesIssueDataElement", namespace = "urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.9")
-public class LondonAuditChangesIssueDataElement {
+@XmlRootElement(name = "londonCaaMessageAuditElement")
+public class LondonCaaMessageAuditElement {
 
-    @XmlElement(namespace = "urn:x-emc:com.bnpparibas:solar:solar:infoarchive:lama:london:1.9", required = true)
-    protected List<AuditChangesIssueDataObject> londonNameElement;
+    @XmlElement(required = true)
+    protected List<CaaMessageAuditObject> londonNameElement;
 
     /**
      * Gets the value of the londonNameElement property.
@@ -64,13 +64,13 @@ public class LondonAuditChangesIssueDataElement {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AuditChangesIssueDataObject }
+     * {@link CaaMessageAuditObject }
      * 
      * 
      */
-    public List<AuditChangesIssueDataObject> getLondonNameElement() {
+    public List<CaaMessageAuditObject> getLondonNameElement() {
         if (londonNameElement == null) {
-            londonNameElement = new ArrayList<AuditChangesIssueDataObject>();
+            londonNameElement = new ArrayList<CaaMessageAuditObject>();
         }
         return this.londonNameElement;
     }
