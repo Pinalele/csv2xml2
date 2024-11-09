@@ -3,7 +3,10 @@ package org.example;
 import javax.xml.bind.JAXBException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CSVToXMLConverter {
     public static void main(String[] args) {
@@ -36,13 +39,22 @@ public class CSVToXMLConverter {
     public void convertCSVToXML(String csvPath, String outputDir) throws Exception {
         List<List<String>> rows = csvLoader.loadCSV(csvPath);
 
+        Map<String, List<List<String>>> rowsByType = new HashMap<>();
+
         for (List<String> row : rows) {
             int type = Integer.parseInt(row.get(1));  // Tipo está na posição 1
-            XMLGenerator generator = generatorFactory.getGenerator(type);
 
-            String xmlContent = generator.generateXML(row);
-            String tableVal = getLetter(type);
-            String outputFileName = outputDir + "/" + tableVal + "_" + row.get(0) + ".xml"; // ID na posição 0
+            rowsByType.computeIfAbsent(String.valueOf(type), k -> new ArrayList<>()).add(row);
+        }
+
+        for (Map.Entry<String, List<List<String>>> entry : rowsByType.entrySet()) {
+            String type = entry.getKey();
+            List<List<String>> groupedRows = entry.getValue();
+            XMLGenerator generator = generatorFactory.getGenerator(Integer.parseInt(type));
+
+            String xmlContent = generator.generateXML(groupedRows);
+            String tableVal = getLetter(Integer.parseInt(type));
+            String outputFileName = outputDir + "/" + tableVal + ".xml"; // ID na posição 0
 
             try (FileWriter writer = new FileWriter(outputFileName)) {
                 writer.write(xmlContent);
